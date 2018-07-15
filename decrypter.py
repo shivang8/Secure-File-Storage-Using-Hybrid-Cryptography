@@ -16,8 +16,8 @@ def Algo1(key):
 
 def Algo1_extented(filename, key1, key2):
 	f = MultiFernet([Fernet(key1),Fernet(key2)])
-	source_filename = 'encrypted\\' + filename
-	target_filename = 'files\\' + filename
+	source_filename = 'encrypted/' + filename
+	target_filename = 'files/' + filename
 	file = open(source_filename,'rb')
 	target_file = open(target_filename,'wb')
 	raw = ""
@@ -31,8 +31,8 @@ def Algo1_extented(filename, key1, key2):
 def Algo2(filename, key, nonce):
 	aad = "authenticated but unencrypted data"
 	chacha = ChaCha20Poly1305(key)
-	source_filename = 'encrypted\\' + filename
-	target_filename = 'files\\' + filename
+	source_filename = 'encrypted/' + filename
+	target_filename = 'files/' + filename
 	file = open(source_filename,'rb')
 	target_file = open(target_filename,'wb')
 	raw = ""
@@ -46,8 +46,8 @@ def Algo2(filename, key, nonce):
 def Algo3(filename, key, nonce):
 	aad = "authenticated but unencrypted data"
 	aesgcm = AESGCM(key)
-	source_filename = 'encrypted\\' + filename
-	target_filename = 'files\\' + filename
+	source_filename = 'encrypted/' + filename
+	target_filename = 'files/' + filename
 	file = open(source_filename,'rb')
 	target_file = open(target_filename,'wb')
 	raw = ""
@@ -61,8 +61,8 @@ def Algo3(filename, key, nonce):
 def Algo4(filename, key, nonce):
 	aad = "authenticated but unencrypted data"
 	aesccm = AESCCM(key)
-	source_filename = 'encrypted\\' + filename
-	target_filename = 'files\\' + filename
+	source_filename = 'encrypted/' + filename
+	target_filename = 'files/' + filename
 	file = open(source_filename,'rb')
 	target_file = open(target_filename,'wb')
 	raw = ""
