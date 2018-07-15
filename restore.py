@@ -20,7 +20,7 @@ def restore():
 
 	with open(address,'wb') as writer:
 		for file in list_of_files:
-			path = 'files\\' + file
+			path = 'files/' + file
 			with open(path,'rb') as reader:
 				for line in reader:
 					writer.write(line)
