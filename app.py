@@ -43,9 +43,9 @@ def return_key():
 def return_file():
 	list_directory = tools.list_dir('restored_file')
 	filename = './restored_file/' + list_directory[0]
-	print "****************************************"
-	print list_directory[0]
-	print "****************************************"
+	print ("****************************************")
+	print (list_directory[0])
+	print ("****************************************")
 	return send_file(filename, attachment_filename=list_directory[0], as_attachment=True)
 
 @app.route('/download/')
