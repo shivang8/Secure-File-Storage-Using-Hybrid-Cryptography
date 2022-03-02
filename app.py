@@ -1,7 +1,8 @@
 import os
-from flask import Flask, request, redirect, url_for, render_template, send_from_directory, send_file
+from flask import Flask, flash, request, redirect, url_for, render_template, send_from_directory, send_file
 from werkzeug.utils import secure_filename
 import tools
+from itsdangerous import json
 import divider as dv
 import encrypter as enc
 import decrypter as dec
@@ -43,9 +44,9 @@ def return_key():
 def return_file():
 	list_directory = tools.list_dir('restored_file')
 	filename = './restored_file/' + list_directory[0]
-	print "****************************************"
-	print list_directory[0]
-	print "****************************************"
+	print ("****************************************")
+	print (list_directory[0])
+	print ("****************************************")
 	return send_file(filename, attachment_filename=list_directory[0], as_attachment=True)
 
 @app.route('/download/')

@@ -15,7 +15,7 @@ def divide():
 	meta_data = open('raw_data/meta_data.txt','w')
 	file__name = FILE.split('/')
 	file__name = file__name[-1]
-	print file__name
+	print (file__name)
 	meta_data.write("File_Name=%s\n" % (file__name))
 	with open(FILE, 'rb') as src:
 		while True:
